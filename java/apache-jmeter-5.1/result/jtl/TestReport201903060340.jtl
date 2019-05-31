@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="339" it="0" lt="335" ct="325" ts="1551858033321" s="true" lb="app编号" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="230" sby="0" sc="1" ec="0" ng="1" na="1" hn="SHQ-DL012-1">
+  <responseHeader class="java.lang.String">shared:true, driver:com.mysql.jdbc.Driver, url:jdbc:mysql://10.50.3.5 :3306/game_platform_test?allowMultiQueries=true, user:game_test</responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">app_no
+APP-8031812740656398337
+APP-8031812740656398336
+APP-8031812740656398339
+APP-8031812740656398334
+APP-8031812740656398338
+APP-8031812740656398340
+APP-8031812740656398341
+APP-8069800686393868288
+
+Output variables by position:
+</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <samplerData class="java.lang.String">[Callable Statement] select gi.app_no from game_info gi 
+
+</samplerData>
+</sample>
+<httpSample t="610" it="0" lt="609" ct="538" ts="1551858033758" s="true" lb="查询用户信息接口" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="1221" sby="977" sc="1" ec="0" ng="1" na="1" hn="SHQ-DL012-1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 06 Mar 2019 07:40:02 GMT
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-RateLimit-Reset: 60000
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: must-revalidate
+Cache-Control: no-cache
+Cache-Control: no-store
+X-Powered-By: Jetty
+Access-Control-Allow-Headers: Origin,Content-Type,Accept,Authorization,x-alading-clientid,x-alading-token,x-alading-access-token,x-app-platform,x-ml-clientId,timestamp,sign,fingerprint,AppCode,im
+Pragma: no-cache
+Access-Control-Allow-Origin: *
+X-RateLimit-Remaining: 199
+X-Application-Context: gate:8765
+X-RateLimit-Limit: 200
+Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: x-alading-token,x-alading-access-token
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxODYwMTYzMjE4OSIsInVzZXJJZCI6IjE5IiwibmFtZSI6IjE4NioqKioyMTg5IiwiZXhwIjoxNTUxNDI0ODIyfQ.VDAEtXYpQxnku2bmC1GmqXHtCser8lTtHHIEGsUWlnDPl792moqd6PJF1I5s85bykmCqDoVtnN0Qhein0tlAyMyCY1zvun1hW03o_0hk7-dZ9XFBQOc27f9Twt14vY5I08yBJouN76k-OeuOFToen2_MdZRynQ4U3Ei3BuV0Hws
+Content-Length: 466
+Host: test.magicdapps.com:24443
+User-Agent: Apache-HttpClient/4.5.7 (Java/1.8.0_191)
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;status&quot;:0,&quot;message&quot;:&quot;&quot;,&quot;data&quot;:{&quot;openId&quot;:&quot;2A1AB62A5CCF4CD501A054DA3DB791A1A18CE4E334AE2B6FA7F1FBEBA2871696&quot;,&quot;unionId&quot;:&quot;E1ADDDB8A4DFAE5CC6F512492C2FA81091A0E10C783A49ED5A1D80BA62CA7D13&quot;,&quot;nickName&quot;:&quot;农民哦&quot;,&quot;photo&quot;:&quot;https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=585295871,813748859&amp;fm=173&amp;app=25&amp;f=JPG?w=218&amp;h=146&amp;s=2FBF9EAE00420AEEB91BA12C03003049&quot;},&quot;suc&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;cpNo&quot;: &quot;MER_8033546126743842815&quot;,&#xd;
+	&quot;sign&quot;: &quot;b65be599fd1ddc8de2b130e9a4328305&quot;,&#xd;
+	&quot;appNo&quot;: &quot;APP-8031812740656398341&quot;,&#xd;
+	&#xd;
+	&quot;timestamp&quot;: &quot;1647450891017&quot;,&#xd;
+	&quot;token&quot;:&quot;eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxODYwMTYzMjE4OSIsInVzZXJJZCI6IjE5IiwibmFtZSI6IjE4NioqKioyMTg5IiwiZXhwIjoxNTUyMDMzMDQzfQ.gw83820iQhbDui2gPBJ9BH9V-zcpIbgArORgPCJ2nLwMN-XmPMbJssrCW6tIgb_anSrjMq-wWBVuj6g6TPT_MTrabTDZr8xay9At5FbPadzm8giYlSNAY0LFXa5_92nK_VQxcqFH4w6vvP5HwywI9mhTZ2fXGNQRIEVbwnHNH2I&quot;&#xd;
+}&#xd;
+</queryString>
+  <java.net.URL>https://test.magicdapps.com:24443/api/openApi/userInfo</java.net.URL>
+</httpSample>
+<httpSample t="39" it="0" lt="38" ct="0" ts="1551858034375" s="true" lb="比价接口" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="1003" sby="518" sc="1" ec="0" ng="1" na="1" hn="SHQ-DL012-1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 06 Mar 2019 07:40:02 GMT
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-RateLimit-Reset: 60000
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: must-revalidate
+Cache-Control: no-cache
+Cache-Control: no-store
+X-Powered-By: Jetty
+Access-Control-Allow-Headers: Origin,Content-Type,Accept,Authorization,x-alading-clientid,x-alading-token,x-alading-access-token,x-app-platform,x-ml-clientId,timestamp,sign,fingerprint,AppCode,im
+Pragma: no-cache
+Access-Control-Allow-Origin: *
+X-RateLimit-Remaining: 199
+X-Application-Context: gate:8765
+X-RateLimit-Limit: 200
+Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: x-alading-token,x-alading-access-token
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxODYwMTYzMjE4OSIsInVzZXJJZCI6IjE5IiwibmFtZSI6IjE4NioqKioyMTg5IiwiZXhwIjoxNTUxNDI0ODIyfQ.VDAEtXYpQxnku2bmC1GmqXHtCser8lTtHHIEGsUWlnDPl792moqd6PJF1I5s85bykmCqDoVtnN0Qhein0tlAyMyCY1zvun1hW03o_0hk7-dZ9XFBQOc27f9Twt14vY5I08yBJouN76k-OeuOFToen2_MdZRynQ4U3Ei3BuV0Hws
+Content-Length: 4
+Host: test.magicdapps.com:24443
+User-Agent: Apache-HttpClient/4.5.7 (Java/1.8.0_191)
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;status&quot;:0,&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[{&quot;name&quot;:&quot;BTC&quot;,&quot;price&quot;:26974.086405},{&quot;name&quot;:&quot;ETH&quot;,&quot;price&quot;:783.6981},{&quot;name&quot;:&quot;DUT&quot;,&quot;price&quot;:0.07836981}],&quot;suc&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{}&#xd;
+</queryString>
+  <java.net.URL>https://test.magicdapps.com:24443/api/openApi/currencyPrice</java.net.URL>
+</httpSample>
+<httpSample t="8" it="0" lt="8" ct="3" ts="1551858034417" s="false" lb="意见反馈接口" rc="401" rm="Unauthorized" tn="线程组 1-1" dt="text" de="UTF-8" by="270" sby="625" sc="1" ec="1" ng="1" na="1" hn="SHQ-DL012-1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;status&quot;:0/</failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 401 Unauthorized
+Connection: keep-alive
+Transfer-Encoding: chunked
+Content-Type: application/json;charset=UTF-8
+X-Application-Context: admin:8770
+Date: Wed, 06 Mar 2019 07:40:02 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxODYwMTYzMjE4OSIsInVzZXJJZCI6IjE5IiwibmFtZSI6IjE4NioqKioyMTg5IiwiZXhwIjoxNTUxNDI0ODIyfQ.VDAEtXYpQxnku2bmC1GmqXHtCser8lTtHHIEGsUWlnDPl792moqd6PJF1I5s85bykmCqDoVtnN0Qhein0tlAyMyCY1zvun1hW03o_0hk7-dZ9XFBQOc27f9Twt14vY5I08yBJouN76k-OeuOFToen2_MdZRynQ4U3Ei3BuV0Hws
+Content-Length: 110
+Host: 10.50.41.24:8770
+User-Agent: Apache-HttpClient/4.5.7 (Java/1.8.0_191)
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;status&quot;:40101,&quot;message&quot;:&quot;User token expired!&quot;,&quot;suc&quot;:false}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+  &quot;content&quot;: &quot;testestestetstestetstetse&quot;,&#xd;
+  &quot;files&quot;: [&#xd;
+    &quot;etsttss&quot;&#xd;
+  ],&#xd;
+  &quot;issueId&quot;: [&#xd;
+    0&#xd;
+  ]&#xd;
+}</queryString>
+  <java.net.URL>http://10.50.41.24:8770/adviceFeedBack/saveAdviceFeedBack</java.net.URL>
+</httpSample>
+<httpSample t="3" it="0" lt="3" ct="0" ts="1551858034427" s="false" lb="反馈列表接口" rc="401" rm="Unauthorized" tn="线程组 1-1" dt="text" de="UTF-8" by="270" sby="483" sc="1" ec="1" ng="1" na="1" hn="SHQ-DL012-1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;status&quot;:0/</failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 401 Unauthorized
+Connection: keep-alive
+Transfer-Encoding: chunked
+Content-Type: application/json;charset=UTF-8
+X-Application-Context: admin:8770
+Date: Wed, 06 Mar 2019 07:40:02 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxODYwMTYzMjE4OSIsInVzZXJJZCI6IjE5IiwibmFtZSI6IjE4NioqKioyMTg5IiwiZXhwIjoxNTUxNDI0ODIyfQ.VDAEtXYpQxnku2bmC1GmqXHtCser8lTtHHIEGsUWlnDPl792moqd6PJF1I5s85bykmCqDoVtnN0Qhein0tlAyMyCY1zvun1hW03o_0hk7-dZ9XFBQOc27f9Twt14vY5I08yBJouN76k-OeuOFToen2_MdZRynQ4U3Ei3BuV0Hws
+Host: 10.50.41.24:8770
+User-Agent: Apache-HttpClient/4.5.7 (Java/1.8.0_191)
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;status&quot;:40101,&quot;message&quot;:&quot;User token expired!&quot;,&quot;suc&quot;:false}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://10.50.41.24:8770/issueInfo/issueInfoList</java.net.URL>
+</httpSample>
+<httpSample t="3" it="0" lt="3" ct="0" ts="1551858034431" s="true" lb="系统公告接口" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="1208" sby="485" sc="1" ec="0" ng="1" na="1" hn="SHQ-DL012-1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Connection: keep-alive
+Transfer-Encoding: chunked
+Content-Type: application/json;charset=UTF-8
+X-Application-Context: admin:8770
+Date: Wed, 06 Mar 2019 07:40:02 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxODYwMTYzMjE4OSIsInVzZXJJZCI6IjE5IiwibmFtZSI6IjE4NioqKioyMTg5IiwiZXhwIjoxNTUxNDI0ODIyfQ.VDAEtXYpQxnku2bmC1GmqXHtCser8lTtHHIEGsUWlnDPl792moqd6PJF1I5s85bykmCqDoVtnN0Qhein0tlAyMyCY1zvun1hW03o_0hk7-dZ9XFBQOc27f9Twt14vY5I08yBJouN76k-OeuOFToen2_MdZRynQ4U3Ei3BuV0Hws
+Host: 10.50.41.24:8770
+User-Agent: Apache-HttpClient/4.5.7 (Java/1.8.0_191)
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;status&quot;:0,&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;},{&quot;content&quot;:&quot;131****2799 在养马游戏中赢取 10个ETH&quot;,&quot;createTime&quot;:&quot;2019-03-06 15:40:02&quot;}],&quot;count&quot;:10,&quot;suc&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://10.50.41.24:8770/pub/notice/listHomeNotice</java.net.URL>
+</httpSample>
+
+</testResults>

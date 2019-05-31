@@ -1,0 +1,1 @@
+%ANT_HOME%\bin\ant -f %JMETER_HOME%\extras\build.xml

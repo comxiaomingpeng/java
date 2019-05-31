@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="732" it="0" lt="729" ct="719" ts="1551855679811" s="true" lb="app编号" rc="200" rm="OK" tn="线程组 1-1" dt="text" by="230" sby="0" ng="1" na="1"/>
+<httpSample t="781" it="0" lt="779" ct="685" ts="1551855680634" s="true" lb="查询用户信息接口" rc="200" rm="OK" tn="线程组 1-1" dt="text" by="1221" sby="977" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>https://test.magicdapps.com:24443/api/openApi/userInfo</java.net.URL>
+</httpSample>
+<httpSample t="43" it="0" lt="43" ct="0" ts="1551855681428" s="true" lb="比价接口" rc="200" rm="OK" tn="线程组 1-1" dt="text" by="1003" sby="518" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>https://test.magicdapps.com:24443/api/openApi/currencyPrice</java.net.URL>
+</httpSample>
+<httpSample t="7" it="0" lt="7" ct="2" ts="1551855681473" s="false" lb="意见反馈接口" rc="401" rm="Unauthorized" tn="线程组 1-1" dt="text" by="270" sby="625" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;status&quot;:0/</failureMessage>
+  </assertionResult>
+  <java.net.URL>http://10.50.41.24:8770/adviceFeedBack/saveAdviceFeedBack</java.net.URL>
+</httpSample>
+<httpSample t="4" it="0" lt="4" ct="0" ts="1551855681482" s="false" lb="反馈列表接口" rc="401" rm="Unauthorized" tn="线程组 1-1" dt="text" by="270" sby="483" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Test failed: text expected to contain /&quot;status&quot;:0/</failureMessage>
+  </assertionResult>
+  <java.net.URL>http://10.50.41.24:8770/issueInfo/issueInfoList</java.net.URL>
+</httpSample>
+<httpSample t="3" it="0" lt="3" ct="0" ts="1551855681488" s="true" lb="系统公告接口" rc="200" rm="OK" tn="线程组 1-1" dt="text" by="1208" sby="485" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://10.50.41.24:8770/pub/notice/listHomeNotice</java.net.URL>
+</httpSample>
+
+</testResults>

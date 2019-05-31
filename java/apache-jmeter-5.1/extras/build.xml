@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<project name="ant-jmeter" default="all">
+    <description>
+		JMeter+ant+jenkins <!-- 文件描述，可选择项-->
+    </description>
+    
+	<!-- 定义变量并赋值，能够减少配置工作量，后面会调用到 -->
+	<!-- 定义jmeter的工作目录，与%JMETRE_HOME%指项同一个目录 -->
+	<!-- ${user.dir}当前目录的意思，在此指向%JMETRE_HOME%目录 -->
+    <property name="jmeter.home" value="${user.dir}"/>
+	
+	<!-- 除了用user.dir 我们还可以用basedir来指定目录，这个目录指定的是%JMTER_HOME% -->
+	<!--<property name="jmeter.home" value="${basedir}"/>-->
+	
+	<!-- 定义jmeter的脚本存放目录，指向%JMETER_HOME%/script 目录 -->
+	<property name="script.dir" value="${user.dir}/script"/>
+	
+	<!-- 定义测试结果存放目录，指向%JMETER_HOME%/result 目录 -->
+	<property name="jmeter.result" value="${user.dir}/result"/>
+		
+	<!-- 定义测试报告的Title -->
+    <property name="report.title" value="自动化、性能测试报告"/>
+    
+    <!-- 定义测试结果名称 -->
+    <property name="test" value="Test2"/>
+    
+    <!-- 测试报告中是否显示失败事务，n为不显示 Should report include response data for failures? -->
+    <property name="show-data" value="n"/>
+
+	<!-- 定义样式版本，有更新是只需更改之处即可，其他调佣处不用更改 -->
+    <property name="format" value="2.1"/>
+	<condition property="style_version" value="">
+        <equals arg1="${format}" arg2="2.0"/>
+    </condition>
+    
+    <condition property="style_version" value="_21">
+        <equals arg1="${format}" arg2="2.1"/>
+    </condition>
+
+    <condition property="funcMode">
+        <equals arg1="${show-data}" arg2="y"/>
+    </condition>
+    
+    <condition property="funcMode" value="false">
+      <not>
+        <equals arg1="${show-data}" arg2="y"/>
+      </not>
+    </condition>
+
+    <!-- 定义依赖包目录 Allow jar to be picked up locally -->
+    <path id="jmeter.classpath">
+		<!-- ${basedir}指向当前目录，此build.xml所在目录 -->
+        <fileset dir="${basedir}">
+		  <!-- 把ant-jmeter字符开头的包.jar结尾的包都引进来，在此*一般是版本信息 -->
+		  <!-- 我们使用的jmeter中是ant-jmeter-1.1.1.jar -->
+          <include name="ant-jmeter*.jar"/>
+        </fileset>
+    </path>
+
+	<!-- 定义任务，即测试活动，依赖于ant-jmeter.jar包 -->
+    <taskdef
+        name="jmeter"
+        classpathref="jmeter.classpath"
+        classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask"/>
+    
+	<!-- 定义任务，一个run，即运行脚本，一个report，即生成报告 -->
+    <target name="all" depends="run,report"/>
+
+	<!-- 定义run任务 -->
+    <target name="run">
+		
+		<!-- 显示上面定义的${show-data}取值 -->
+        <echo>funcMode = ${funcMode}</echo>
+		
+		<!-- 删除前一次的测试报告，HTML格式的，上面有定义${test}变量的值 -->
+        <delete file="${jmeter.home}/result/${test}.html"/>
+		
+		<!-- 删除前一次的测试报告，文本格式的，上面有定义${test}变量的值 -->
+		<delete file="${jmeter.home}/result/${test}.jtl"/>
+        <jmeter
+            jmeterhome="${jmeter.home}"
+			jmeterproperties="${user.dir}/bin/jmeter.properties"
+			runremote = "true"
+			resultlog="${jmeter.home}/result/${test}.jtl">
+			<testplans dir ="${script.dir}" includes = "TestInterBao.jmx"/>
+		<!--
+            <jvmarg value="-Xincgc"/>
+            <jvmarg value="-Xmx128m"/>
+            <jvmarg value="-Dproperty=value"/>
+            <jmeterarg value="-qextra.properties"/>
+        -->
+            <!-- Force suitable defaults -->
+            <property name="jmeter.save.saveservice.output_format" value="xml"/>
+            <!--<property name="jmeter.save.saveservice.assertion_results" value="all"/>
+            <property name="jmeter.save.saveservice.bytes" value="true"/>
+            <property name="file_format.testlog" value="${format}"/>-->
+            <property name="jmeter.save.saveservice.response_data.on_error" value="${funcMode}"/>
+        </jmeter>
+    </target>
+
+    <property name="lib.dir" value="${jmeter.home}/lib"/>
+
+    <!-- Use xalan copy from JMeter lib directory to ensure consistent processing with Java 1.4+ -->
+    <path id="xslt.classpath">
+        <fileset dir="${lib.dir}" includes="xalan*.jar"/>
+        <fileset dir="${lib.dir}" includes="serializer*.jar"/>
+    </path>
+
+    <target name="report" depends="xslt-report,copy-images">
+        <echo>Report generated at ${report.datestamp}</echo>
+    </target>
+
+    <target name="xslt-report" depends="_message_xalan">
+        <tstamp><format property="report.datestamp" pattern="yyyy/MM/dd HH:mm"/></tstamp>
+        <xslt
+            classpathref="xslt.classpath"
+            force="true"
+            in="${jmeter.home}/result/${test}.jtl"
+            out="${jmeter.home}/result/${test}.html"
+            style="${basedir}/jmeter-results-detail-report${style_version}.xsl">
+            <param name="showData" expression="${show-data}"/>
+            <param name="titleReport" expression="${report.title}"/>
+            <param name="dateReport" expression="${report.datestamp}"/>
+        </xslt>
+    </target>
+
+    <!-- Copy report images if needed -->
+    <target name="copy-images" depends="verify-images" unless="samepath">
+        <copy file="${basedir}/expand.png" tofile="${jmeter.home}/result/expand.png"/>
+        <copy file="${basedir}/collapse.png" tofile="${jmeter.home}/result/collapse.png"/>
+    </target>
+
+    <target name="verify-images">
+        <condition property="samepath">
+                <equals arg1="${jmeter.home}" arg2="${basedir}" />
+        </condition>
+    </target>
+
+    <!-- 检查依赖 Check that the xalan libraries are present -->
+    <condition property="xalan.present">
+          <and>
+              <!-- No need to check all jars; just check a few -->
+            <available classpathref="xslt.classpath" classname="org.apache.xalan.processor.TransformerFactoryImpl"/>
+            <available classpathref="xslt.classpath" classname="org.apache.xml.serializer.ExtendedContentHandler"/>
+          </and>
+    </condition>
+
+    <target name="_message_xalan" unless="xalan.present">
+          <echo>Cannot find all xalan and/or serialiser jars</echo>
+        <echo>The XSLT formatting may not work correctly.</echo>
+        <echo>Check you have xalan and serializer jars in ${lib.dir}</echo>
+    </target>
+	
+	<!-- 仅仅打印前面定义的变量的值，定义变量是作调试使用 -->
+	<echo>basedir = ${basedir}</echo>
+	<echo>jmeter.home = ${jmeter.home}</echo> 
+
+</project>

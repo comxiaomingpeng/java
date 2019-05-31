@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<project name="ant-jmeter-test" default="run" basedir=".">
+		<tstamp>
+			<format property="time" pattern="yyyyMMddhhmm" />
+		</tstamp>
+		
+		<!-- jmeter安装路径 -->
+		<property name="jmeter.home" value="D:\autoTest\apache-jmeter-5.1" />
+		<!-- 发送给那些人，多个人需要逗号分隔 -->
+		<property name="mail_to" value="pengxiaoming@magicdapps.io"/>
+		<!-- jmeter生成jtl格式的结果报告路劲 -->
+		<property name="jmeter.result.jtl.dir" value="D:\autoTest\apache-jmeter-5.1\result\jtl" />
+		<!-- jmeter生成html格式的结果报告路劲 -->
+		<property name="jmeter.result.html.dir" value="D:\autoTest\apache-jmeter-5.1\result\html" />
+		<!-- 定义测试报告的Title -->
+		<property name="report.title" value="自动化接口测试报告"/>
+		<!-- 定义报告的前缀名 -->
+		<property name="ReportName" value="TestReport" />
+		<!-- 生成报告的地址与名称 -->
+		<property name="jmeter.result.jtlName" value="${jmeter.result.jtl.dir}/${ReportName}.jtl" />
+		<property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/${ReportName}.html" />
+    
+		<target name="run">
+			<antcall target="test" />
+			<antcall target="report" />
+			<antcall target="mail" /> 
+		</target>
+    
+		<target name="test">
+			<!-- 删除前一次的测试报告，HTML格式的，上面有定义${test}变量的值 -->
+            <delete file="${jmeter.home}/result/html/${ReportName}.html"/>
+		
+		    <!-- 删除前一次的测试报告，文本格式的，上面有定义${test}变量的值 -->
+		    <delete file="${jmeter.home}/result/jtl/${ReportName}.jtl"/>
+			
+			<taskdef name="jmeter" classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask" />
+			<jmeter jmeterhome="${jmeter.home}" resultlog="${jmeter.result.jtlName}">
+				<!-- jmeter脚本路劲 -->
+				<testplans dir="D:\autoTest\apache-jmeter-5.1\script" includes="*.jmx" />
+				<property name="jmeter.save.saveservice.output_format" value="xml"/>
+			</jmeter>
+		</target>
+        <path id="xslt.classpath">
+			<fileset dir="${jmeter.home}/lib" includes="xalan*.jar"/>
+			<fileset dir="${jmeter.home}/lib" includes="serializer*.jar"/>
+		</path>
+		
+		<target name="report">
+			<tstamp><format property="report.datestamp" pattern="yyyy/MM/dd HH:mm"/></tstamp>
+			<xslt
+				classpathref="xslt.classpath"
+				force="true"
+				in="${jmeter.result.jtlName}"
+				out="${jmeter.result.htmlName}"
+				style="${jmeter.home}/extras/jmeter-results-detail-report_21.xsl">
+				
+				<param name="titleReport" expression="${report.title}"/>
+				<param name="dateReport" expression="${report.datestamp}"/>
+			</xslt>
+                
+			<!-- 手动拷贝＋－图片-->
+			<copy file="${jmeter.home}/extras/collapse.png" tofile="${jmeter.result.html.dir}/collapse.png" />
+			<copy file="${jmeter.home}/extras/expand.png" tofile="${jmeter.result.html.dir}/expand.png" />
+		</target>
+		
+		<!--将控制台输出到文本中-->
+		<record name="${jmeter.result.html.dir}/${ReportName}.txt" loglevel="info" append="no" action="start"/>
+		
+		<!--执行第三个任务，发送邮件-->
+		<target name="mail">
+			<!--读取输出的控制台日志文件并写入邮件正文-->
+			<loadfile property="email_content" srcFile="${jmeter.result.html.dir}/${ReportName}.txt" encoding="UTF-8"/>
+			<loadfile property="output" srcFile="${jmeter.result.html.dir}/${ReportName}.html" encoding="UTF-8"/>
+				<!-- 此处配置SMTP服务器   POP3授权码   发送邮箱地址   端口  发送邮箱主题-->
+			<mail tolist="${mail_to}" mailhost="smtp.magicdapps.io" mailport="25" user="pengxiaoming@magicdapps.io" password="1qazXSW@" subject="jmeter测试报告${ReportName}" messagemimetype="text/html">
+				<from address="pengxiaoming@magicdapps.io" />
+				<fileset dir="${jmeter.result.html.dir}">
+				<include name="${ReportName}.html"/>
+				</fileset>
+				<message>
+					系统发送请勿回复
+					${ReportName}
+					${output}
+				</message>
+			</mail>
+	</target> 
+
+		
+		<!-- 仅仅打印前面定义的变量的值，定义变量是作调试使用 -->
+		<echo>basedir = ${basedir}</echo>
+		<echo>jmeter.home = ${jmeter.home}</echo> 
+	</project>

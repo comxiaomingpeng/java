@@ -1,0 +1,84 @@
+2019-03-05 15:23:41,891 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2019-03-05 15:23:41,905 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2019-03-05 15:23:41,906 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: Copyright (c) 1998-2019 The Apache Software Foundation
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: Version 5.1 r1853635
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: java.version=1.8.0_191
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: os.name=Windows 7
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: os.arch=amd64
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: os.version=6.1
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: file.encoding=GBK
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: java.awt.headless=true
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: Max memory     =1073741824
+2019-03-05 15:23:41,912 INFO o.a.j.JMeter: Available Processors =4
+2019-03-05 15:23:41,917 INFO o.a.j.JMeter: Default Locale=English (EN)
+2019-03-05 15:23:41,918 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2019-03-05 15:23:41,918 INFO o.a.j.JMeter: JMeterHome=D:\jmeter\jmeter5.1\apache-jmeter-5.1
+2019-03-05 15:23:41,918 INFO o.a.j.JMeter: user.dir  =D:\jmeter\jmeter5.1\apache-jmeter-5.1\bin
+2019-03-05 15:23:41,918 INFO o.a.j.JMeter: PWD       =D:\jmeter\jmeter5.1\apache-jmeter-5.1\bin
+2019-03-05 15:23:41,920 INFO o.a.j.JMeter: IP: 10.108.3.14 Name: SHQ-DL012-1 FullName: windows10.microdone.cn
+2019-03-05 15:23:41,944 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-03-05 15:23:41,944 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-03-05 15:23:42,095 INFO o.a.j.e.RemoteJMeterEngineImpl: Starting backing engine on 2099
+2019-03-05 15:23:42,095 INFO o.a.j.r.RmiUtils: System property 'java.rmi.server.hostname' is not defined, using localHost address
+2019-03-05 15:23:42,096 INFO o.a.j.r.RmiUtils: Local IP address=10.108.3.14
+2019-03-05 15:23:42,096 INFO o.a.j.e.RemoteJMeterEngineImpl: IP address is a site-local address; this may cause problems with remote access.
+	Can be overridden by defining the system property 'java.rmi.server.hostname' - see jmeter-server script file
+2019-03-05 15:23:42,096 INFO o.a.j.e.RemoteJMeterEngineImpl: Creating RMI registry (server.rmi.create=true)
+2019-03-05 15:23:42,096 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-03-05 15:23:42,096 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-03-05 15:23:42,099 INFO o.a.j.e.RemoteJMeterEngineImpl: Bound to RMI registry on port 2099
+2019-03-05 15:24:00,789 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-03-05 15:24:00,797 INFO o.a.j.s.BatchSampleSender: Using batching for this run. Thresholds: num=100, time=60000
+2019-03-05 15:24:00,797 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run with stripAlsoOnError: true
+2019-03-05 15:24:00,845 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-05 15:24:00,845 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-05 15:24:00,845 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-05 15:24:00,845 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-05 15:24:00,846 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-03-05 15:24:00,846 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-03-05 15:24:00,895 INFO o.a.j.s.BatchSampleSender: Using batching for this run. Thresholds: num=100, time=60000
+2019-03-05 15:24:00,895 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run with stripAlsoOnError: true
+2019-03-05 15:24:00,918 INFO o.a.j.s.BatchSampleSender: Using batching for this run. Thresholds: num=100, time=60000
+2019-03-05 15:24:00,918 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run with stripAlsoOnError: true
+2019-03-05 15:24:00,972 INFO o.a.j.e.RemoteJMeterEngineImpl: Creating JMeter engine on host 10.108.3.14:2099 base '.'
+2019-03-05 15:24:00,972 INFO o.a.j.e.RemoteJMeterEngineImpl: Remote client host: 10.108.3.14
+2019-03-05 15:24:00,976 INFO o.a.j.s.FileServer: Default base='D:\jmeter\jmeter5.1\apache-jmeter-5.1\bin'
+2019-03-05 15:24:00,997 INFO o.a.j.s.FileServer: Set new base='.'
+2019-03-05 15:24:01,006 INFO o.a.j.e.StandardJMeterEngine: Applying properties {}
+2019-03-05 15:24:01,007 INFO o.a.j.e.RemoteJMeterEngineImpl: Running test
+2019-03-05 15:24:01,023 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-03-05 15:24:01,023 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-03-05 15:24:01,031 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2019-03-05 15:24:01,032 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2019-03-05 15:24:01,540 INFO o.a.j.t.TestPlan: added D:\jmeter\apache-jmeter-5.0\lib\ext\mysql-connector-java-5.1.26.jar to classpath
+2019-03-05 15:24:01,778 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : 线程组
+2019-03-05 15:24:01,778 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group 线程组.
+2019-03-05 15:24:01,778 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-03-05 15:24:01,779 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-03-05 15:24:01,783 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-03-05 15:24:01,783 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-03-05 15:24:01,787 INFO o.a.j.t.JMeterThread: Thread started: 10.108.3.14:2099-线程组 1-1
+2019-03-05 15:24:01,791 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2019-03-05 15:24:01,791 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2019-03-05 15:24:01,791 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2019-03-05 15:24:01,791 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2019-03-05 15:24:02,394 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = SHQ-DL012-1
+2019-03-05 15:24:02,401 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2019-03-05 15:24:02,664 INFO o.a.j.p.h.s.h.LazyLayeredConnectionSocketFactory: Setting up HTTPS TrustAll Socket Factory
+2019-03-05 15:24:02,673 INFO o.a.j.u.JsseSSLManager: Using default SSL protocol: TLS
+2019-03-05 15:24:02,673 INFO o.a.j.u.JsseSSLManager: SSL session context: per-thread
+2019-03-05 15:24:03,125 INFO o.a.j.u.SSLManager: JmeterKeyStore Location:  type JKS
+2019-03-05 15:24:03,126 INFO o.a.j.u.SSLManager: KeyStore created OK
+2019-03-05 15:24:03,127 WARN o.a.j.u.SSLManager: Keystore file not found, loading empty keystore
+2019-03-05 15:24:03,483 INFO o.a.j.t.JMeterThread: Thread is done: 10.108.3.14:2099-线程组 1-1
+2019-03-05 15:24:03,483 INFO o.a.j.t.JMeterThread: Thread finished: 10.108.3.14:2099-线程组 1-1
+2019-03-05 15:24:03,485 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-03-05 15:24:03,490 INFO o.a.j.s.DataStrippingSampleSender: Test Ended on 10.108.3.14:2099
+2019-03-05 15:24:03,490 INFO o.a.j.s.BatchSampleSender: Test Ended on 10.108.3.14:2099
+2019-03-05 15:24:03,511 INFO o.a.j.s.DataStrippingSampleSender: Test Ended on 10.108.3.14:2099
+2019-03-05 15:24:03,511 INFO o.a.j.s.BatchSampleSender: Test Ended on 10.108.3.14:2099
+2019-03-05 15:24:03,518 INFO o.a.j.s.DataStrippingSampleSender: Test Ended on 10.108.3.14:2099
+2019-03-05 15:24:03,518 INFO o.a.j.s.BatchSampleSender: Test Ended on 10.108.3.14:2099
+2019-03-05 15:24:03,532 INFO o.a.j.e.StandardJMeterEngine: Test has ended on host 10.108.3.14:2099 

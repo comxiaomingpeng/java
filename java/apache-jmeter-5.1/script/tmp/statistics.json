@@ -1,0 +1,47 @@
+{
+  "用户密码登录接口" : {
+    "transaction" : "用户密码登录接口",
+    "sampleCount" : 1,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 1879.0,
+    "minResTime" : 1879.0,
+    "maxResTime" : 1879.0,
+    "pct1ResTime" : 1879.0,
+    "pct2ResTime" : 1879.0,
+    "pct3ResTime" : 1879.0,
+    "throughput" : 0.532197977647685,
+    "receivedKBytesPerSec" : 0.6106763903672165,
+    "sentKBytesPerSec" : 0.5041328499201703
+  },
+  "登出接口" : {
+    "transaction" : "登出接口",
+    "sampleCount" : 1,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 10.0,
+    "minResTime" : 10.0,
+    "maxResTime" : 10.0,
+    "pct1ResTime" : 10.0,
+    "pct2ResTime" : 10.0,
+    "pct3ResTime" : 10.0,
+    "throughput" : 100.0,
+    "receivedKBytesPerSec" : 84.27734375,
+    "sentKBytesPerSec" : 44.43359375
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 2,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 944.5,
+    "minResTime" : 10.0,
+    "maxResTime" : 1879.0,
+    "pct1ResTime" : 1879.0,
+    "pct2ResTime" : 1879.0,
+    "pct3ResTime" : 1879.0,
+    "throughput" : 1.0443864229765012,
+    "receivedKBytesPerSec" : 1.0392868798955612,
+    "sentKBytesPerSec" : 0.7266848890339426
+  }
+}
